@@ -18,6 +18,9 @@ Open the local URL printed by Vite. Use the milestone controls above the phone a
 - `?variant=A`, `?variant=B`, and `?variant=C` switch between three structurally different Home layouts.
 - Category tiles open simulated mini-app webviews with task-specific bottom navigation.
 - Internal Back stays within the mini-app; `×` exits to the originating core screen.
+- Month 3 includes one Taladi marketplace rather than separate Grocery, Beauty, or Travel webviews.
+- Taladi categories, search, product details, quantity controls, and the session cart are clickable; checkout is intentionally out of scope.
+- Month 5 Travel includes a hotel-first discovery, search, filtering, save, room-selection, and simulated trip-confirmation journey; no real reservation is created.
 
 This is throwaway prototype code. Once a layout wins, remove the losing variants and promote the selected design into production-quality components.
 
