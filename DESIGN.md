@@ -1,3 +1,14 @@
+# ALL Super App Design System
+
+> Source-of-truth visual direction for Google Stitch mobile screens.
+
+**Default appearance:** warm-light, calm, and content-led—not a dark fintech interface.
+
+**Brand anchor:** ALL Ink and the black ALL wordmark.
+
+**App shell:** a fixed five-item bottom navigation—Home, Travel, ALL, ALL Wallet, Activity.
+**Product posture:** a super app with an integrated native e-wallet, not a wallet app with extra services.
+
 ## 1. Visual Theme & Atmosphere
 
 ALL is a light-first, ecosystem-led super app: calm and clear for everyday tasks, with enough character to feel personal and connected.
@@ -18,6 +29,7 @@ ALL uses a warm neutral interface with a black brand anchor and a purposeful eco
 
 ### Core neutrals
 - **ALL Ink** `#12151C`: Primary actions, headings, iconography, wordmark treatment.
+- **Focus Navy** `#101A2B`: Focused AI, scanner, and secure-confirmation surfaces only.
 - **Canvas** `#FBFAF7`: Default screen background.
 - **Surface** `#FFFFFF`: Sheets, inputs, selected content surfaces.
 - **Surface Muted** `#F3F2EE`: Grouped backgrounds, disabled fills, quiet sections.
@@ -48,7 +60,11 @@ Use an ecosystem color for its icon, active destination, service-specific CTA, a
 - **Error** `#C83E3A`
 - **Info** `#246BDB`
 
-Dark mode, when needed, uses deep navy surfaces rather than pure black. It is optional and reserved for AI, media, scanner, and focus-heavy experiences—not the default appearance of ALL.
+### Focused dark surfaces
+ALL has no global dark mode at launch. Focus Navy is reserved for immersive AI, scanner, media, and secure-confirmation surfaces; it is never a default screen background or a reason to invert an ordinary ALL flow.
+
+### Accessibility
+All essential text, icons, and controls must meet WCAG AA contrast against their immediate surface. Colour communicates context and status but never carries meaning alone; pair it with clear text, an icon, or a distinct state treatment.
 
 ## 3. Typography Rules
 
@@ -99,7 +115,7 @@ ALL must feel intentionally art-directed: a useful personal hub with real servic
 
 ## 5. Bottom Navigation
 
-The ALL bottom navigation is persistent, calm, and unmistakable. It contains exactly five destinations:
+The ALL bottom navigation is the fixed app shell: persistent across normal ALL screens, calm, and unmistakable. It contains exactly five destinations:
 
 1. Home
 2. Travel
@@ -109,11 +125,18 @@ The ALL bottom navigation is persistent, calm, and unmistakable. It contains exa
 
 The bar is a warm-white surface with a subtle top divider. Do not make it a dark floating dock, glass panel, or oversized pill. All five destinations remain labeled and visible; no hidden “More” destination.
 
+### App-shell coverage
+Keep this exact bottom bar fixed and visible on all main, browse, and status screens: Home, Travel landing and discovery, ALL Hub, Wallet Home, transaction history, Activity, notifications, account, and native partner-status modules. The destination may change, but the bar’s position, labels, spacing, and central ALL control never change.
+
+Hide the bar only when its presence could distract from, interrupt, or compromise a focused task: QR scanning, money-entry and payment review, biometric or PIN authorisation, KYC capture, full-screen media, system permission prompts, external-bank authentication, and a partner’s deep WebView journey. These flows use a clear native top bar with Back or Close and return the user to the fixed ALL shell as soon as the task ends.
+
+When a bottom sheet, modal, or transient full-screen state is open, the navigation remains visually behind it but cannot be interacted with. Do not create a second bottom bar, a partner-specific tab bar, or a floating dock inside ALL.
+
 ### Standard destinations
 - Icons: simple 22-24pt outline icons; use filled icons only for the active state.
 - Labels: 12pt, 600 weight.
-- Inactive state: Text Tertiary.
-- Active state: ALL Ink on Home and Activity; Travel Sky on Travel; Wallet Blue on ALL Wallet.
+- Inactive state: Text Secondary. Use color only as a secondary cue, never as the sole indication of state.
+- Active state: ALL Ink label with a contextual colored icon—Travel Sky on Travel and Wallet Blue on ALL Wallet. Home and Activity use ALL Ink for both. All essential labels and icons must meet WCAG AA contrast against their surface.
 - Notification badges appear only for actionable alerts, never as decoration.
 
 ### Raised central ALL control
@@ -121,9 +144,7 @@ The central ALL control is elevated above the bar and is the only visually speci
 - Shape: circular, 56pt minimum touch target.
 - Surface: ALL Ink with a white ALL mark.
 - Halo: thin Blue → Cyan → Magenta spectrum ring, visible only around this control.
-- Tap: opens Ask ALL, voice entry, and contextual quick commands.
-- Long press: opens a compact quick-action sheet; do not expose dock customization in the first release.
-- Double tap: returns to Home from anywhere in the app.
+- Purpose: opens Ask ALL and contextual quick commands.
 
 The central control must feel capable, not noisy. Its glow is still, subtle, and only animates while ALL is listening or completing an action.
 
@@ -211,3 +232,29 @@ Modules appear only when they have value. Do not show empty placeholders, decora
 The Hub should normally contain three to five content groups. It must not show every ecosystem, every service, and every notification at once. Ecosystem access is available through navigation and search; the Hub earns attention by being selective.
 
 Use the user’s real situation to determine hierarchy. An imminent flight should outrank a recommendation; a failed payment should outrank a lifestyle promotion. If nothing is urgent, let the Hub become lighter and more discovery-led rather than manufacturing urgency.
+
+## 10. Partner Surfaces
+
+ALL is one connected super app, even when a partner supplies a service. Use ALL’s light, calm native interface for Wallet, account, Activity, payment authorisation, receipts, and concise partner-status modules such as an active trip, order progress, benefit, or refund.
+
+### Native partner modules
+An ALL-rendered partner module is a small, useful status or continuation object—not a reconstructed partner catalogue. It clearly identifies the provider when relevant, shows only the essential current information, and gives one useful next action. Use ALL typography, surfaces, spacing, and contextual ecosystem colour; never imitate the partner’s visual system inside a generic ALL card.
+
+### Hosted partner journeys
+Deep partner exploration may use the partner’s own experience. ALL provides a restrained native shell with clear Back or Close, partner identity, loading, error, consent, and payment-handoff states. The fixed bottom navigation is hidden during this focused journey and returns when the user returns to ALL.
+
+## 11. ALL Wallet — Visual Patterns
+
+ALL Wallet is a trusted native capability within ALL: precise enough for money movement, simple enough to use in a hurry, and visually calm within the broader super app.
+
+### Wallet Home
+Lead with the available, spendable balance, primary currency, and latest confirmed state. If multiple currencies are available, reveal them in an expandable list with currency code, available amount, home-currency equivalent, and any hold condition. Use tabular figures. Do not place promotions, decorative wallet cards, or charts above the balance.
+
+**Scan & Pay** is the prominent Wallet Blue action. **Receive**, **Transfer**, and **Top Up** are secondary, labeled actions beneath it; they are not an unlabeled icon grid. Use ALL Ink only for irreversible authorization and final confirmation.
+
+Follow the action area with a short, date-grouped transaction list. Each row makes counterparty, type, time, amount, currency, and status immediately clear. Partner offers, if present, follow financial information and never interrupt a money, refund, verification, or security task.
+
+### Financial and trust states
+Money and verification flows are light, quiet, and single-purpose. Use plain-language step labels, visible field labels, clear progress, and a focused top bar instead of the bottom navigation. Scanner and secure-authorisation surfaces may use Focus Navy, but must not feel technical or intimidating.
+
+Before a user commits, visually distinguish recipient, amount, source, fee, rate, timing, and final status. Always distinguish available from pending or held funds, and completed from pending, failed, or unknown outcomes. A pending or unknown state is never celebrated as complete; it uses a calm explanatory status and a clear path to the authoritative receipt or transaction detail.
