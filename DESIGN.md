@@ -1,3 +1,113 @@
+---
+version: alpha
+name: ALL Super App
+description: "A warm-light, ecosystem-led mobile super app with an integrated native e-wallet."
+colors:
+  primary: "#12151C"
+  on-primary: "#FFFFFF"
+  primary-container: "#F3F2EE"
+  on-primary-container: "#12151C"
+  neutral: "#FBFAF7"
+  surface: "#FFFFFF"
+  surface-muted: "#F3F2EE"
+  focus-navy: "#101A2B"
+  text-primary: "#12151C"
+  text-secondary: "#5E6670"
+  text-tertiary: "#8A919B"
+  divider: "#E4E2DD"
+  halo-blue: "#2D5BFF"
+  halo-cyan: "#20C7E8"
+  halo-magenta: "#E943A5"
+  living-green: "#18865A"
+  campus-violet: "#6846C6"
+  wallet-blue: "#246BDB"
+  travel-sky: "#1687C9"
+  commerce-orange: "#D76B1F"
+  rides-red: "#D94A43"
+  success: "#16845B"
+  warning: "#B97800"
+  error: "#C83E3A"
+typography:
+  hero:
+    fontFamily: Manrope
+    fontSize: 28px
+    fontWeight: 700
+    lineHeight: 1.15
+  title-lg:
+    fontFamily: Manrope
+    fontSize: 24px
+    fontWeight: 700
+    lineHeight: 1.2
+  title-md:
+    fontFamily: Manrope
+    fontSize: 20px
+    fontWeight: 700
+    lineHeight: 1.25
+  body-md:
+    fontFamily: Manrope
+    fontSize: 16px
+    fontWeight: 400
+    lineHeight: 1.5
+  label-md:
+    fontFamily: Manrope
+    fontSize: 14px
+    fontWeight: 600
+    lineHeight: 1.4
+  caption:
+    fontFamily: Manrope
+    fontSize: 12px
+    fontWeight: 500
+    lineHeight: 1.4
+  thai-body:
+    fontFamily: Noto Sans Thai
+    fontSize: 16px
+    fontWeight: 400
+    lineHeight: 1.6
+rounded:
+  xs: 4px
+  sm: 10px
+  md: 14px
+  lg: 20px
+  full: 9999px
+spacing:
+  xs: 4px
+  sm: 8px
+  md: 12px
+  lg: 16px
+  xl: 20px
+  2xl: 24px
+  3xl: 32px
+  4xl: 48px
+  5xl: 64px
+components:
+  button-primary:
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.on-primary}"
+    typography: "{typography.label-md}"
+    rounded: "{rounded.sm}"
+    height: 52px
+  button-secondary:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.text-primary}"
+    typography: "{typography.label-md}"
+    rounded: "{rounded.sm}"
+    height: 52px
+  input:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.text-primary}"
+    typography: "{typography.body-md}"
+    rounded: "{rounded.sm}"
+    height: 52px
+  bottom-navigation:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.text-primary}"
+  all-control:
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.on-primary}"
+    rounded: "{rounded.full}"
+    size: 56px
+---
+
 # ALL Super App Design System
 
 > Source-of-truth visual direction for Google Stitch mobile screens.
@@ -7,6 +117,7 @@
 **Brand anchor:** ALL Ink and the black ALL wordmark.
 
 **App shell:** a fixed five-item bottom navigation—Home, Travel, ALL, ALL Wallet, Activity.
+
 **Product posture:** a super app with an integrated native e-wallet, not a wallet app with extra services.
 
 ## 1. Visual Theme & Atmosphere
